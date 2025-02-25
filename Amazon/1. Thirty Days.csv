@@ -1,6 +1,36 @@
 Difficulty,Title,Frequency,Acceptance Rate,Link,Topics
-EASY,Two Sum,100.0,0.549042723172418,https://leetcode.com/problems/two-sum,"Array, Hash Table"
-MEDIUM,LRU Cache,99.1,0.44264990854265895,https://leetcode.com/problems/lru-cache,"Hash Table, Linked List, Design, Doubly-Linked List"
+| Difficulty | Title     | Frequency | Acceptance Rate | Link                                       | Topics                                              | Answer |
+|------------|----------|-----------|----------------|--------------------------------------------|-----------------------------------------------------|---------|
+| EASY       | Two Sum  | 100.0     | 0.5490         | [Two Sum](https://leetcode.com/problems/two-sum) | Array, Hash Table | ```python
+def twoSum(nums, target):
+    num_map = {}
+    for i, num in enumerate(nums):
+        diff = target - num
+        if diff in num_map:
+            return [num_map[diff], i]
+        num_map[num] = i
+``` |
+| MEDIUM     | LRU Cache | 99.1      | 0.4426         | [LRU Cache](https://leetcode.com/problems/lru-cache) | Hash Table, Linked List, Design, Doubly-Linked List | ```python
+from collections import OrderedDict
+class LRUCache:
+    def __init__(self, capacity: int):
+        self.cache = OrderedDict()
+        self.capacity = capacity
+
+    def get(self, key: int) -> int:
+        if key in self.cache:
+            self.cache.move_to_end(key)
+            return self.cache[key]
+        return -1
+
+    def put(self, key: int, value: int) -> None:
+        if key in self.cache:
+            self.cache.move_to_end(key)
+        self.cache[key] = value
+        if len(self.cache) > self.capacity:
+            self.cache.popitem(last=False)
+``` |
+
 MEDIUM,Number of Islands,95.0,0.6142361520438011,https://leetcode.com/problems/number-of-islands,"Array, Depth-First Search, Breadth-First Search, Union Find, Matrix"
 MEDIUM,Reorganize String,90.0,0.5568948107224265,https://leetcode.com/problems/reorganize-string,"Hash Table, String, Greedy, Sorting, Heap (Priority Queue), Counting"
 EASY,Make Array Zero by Subtracting Equal Amounts,87.1,0.7288257670741012,https://leetcode.com/problems/make-array-zero-by-subtracting-equal-amounts,"Array, Hash Table, Greedy, Sorting, Heap (Priority Queue), Simulation"
