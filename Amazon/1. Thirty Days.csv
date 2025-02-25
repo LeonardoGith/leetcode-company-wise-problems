@@ -1,7 +1,8 @@
 Difficulty,Title,Frequency,Acceptance Rate,Link,Topics
 | Difficulty | Title     | Frequency | Acceptance Rate | Link                                       | Topics                                              | Answer |
 |------------|----------|-----------|----------------|--------------------------------------------|-----------------------------------------------------|---------|
-| EASY       | Two Sum  | 100.0     | 0.5490         | [Two Sum](https://leetcode.com/problems/two-sum) | Array, Hash Table | ```python
+| EASY       | Two Sum  | 100.0     | 0.5490         | [Two Sum](https://leetcode.com/problems/two-sum) | Array, Hash Table | 
+```python
 def twoSum(nums, target):
     num_map = {}
     for i, num in enumerate(nums):
@@ -10,7 +11,9 @@ def twoSum(nums, target):
             return [num_map[diff], i]
         num_map[num] = i
 ``` |
-| MEDIUM     | LRU Cache | 99.1      | 0.4426         | [LRU Cache](https://leetcode.com/problems/lru-cache) | Hash Table, Linked List, Design, Doubly-Linked List | ```python
+| MEDIUM     | LRU Cache | 99.1      | 0.4426         | [LRU Cache](https://leetcode.com/problems/lru-cache) | Hash Table, Linked List, Design, Doubly-Linked List | 
+
+```python
 from collections import OrderedDict
 class LRUCache:
     def __init__(self, capacity: int):
